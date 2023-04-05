@@ -84,7 +84,7 @@ router.get("/edit-post/:id", async (req, res) => {
     });
     const post = editPost.get({ plain: true });
 
-    res.render("edit-post", { post, loggedIn: true });
+    res.render("edit-post", { post, logged_in: true });
   } catch (err) {
     res.status(500).json("update error");
   }
@@ -108,7 +108,7 @@ router.get("/comments/:id", async (req, res) => {
     });
     const newComment = comment.get({ plain: true });
     res.render("comments", {
-      newComment,
+      newComment, logged_in: true
     });
   } catch (error) {
     res.status(500).json(error);

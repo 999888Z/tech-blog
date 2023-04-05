@@ -1,3 +1,6 @@
 <div>
-    <p>This is the homepage.</p>
+    {{#each renderBlog as |blog| }}
+  <a href = "/comments/{{blog.id}}"> {{blog.title}} </a>
+  <p>{{blog.body}}</p>
+  {{/each}}
 </div>

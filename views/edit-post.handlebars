@@ -1,0 +1,24 @@
+{{!-- {{ post as |blog| }} --}}
+<p>{{post.title}}</p>
+<p>{{post.body}}</p>
+
+<form>
+    <div>
+        <label>Update Title</label>
+        <input type= "text" id= "update-title"></input>
+    </div>
+
+    <div>
+        <label>Update Body</label>
+        <textarea type= "text" id= "update-body"></textarea>
+    </div>
+
+    <button id="update-btn">Update Post</button>
+    <button id= "delete-btn">Delete</button>
+</form>
+
+
+<script src="/js/updatePost.js"></script>
+
+<script src="/js/deletePost.js"></script>
+

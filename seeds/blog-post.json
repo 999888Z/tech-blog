@@ -1,0 +1,23 @@
+[
+    {
+      "title": "How to play the guitar",
+      
+      "body": "Read a guitar manual.",
+
+        "user_id": 1
+    },
+    {
+        "title": "How to play the violin",
+      
+        "body": "Read a violin manual.",
+  
+          "user_id": 2
+    },
+    {
+        "title": "How to play the drums",
+      
+        "body": "Read a drum manual.",
+  
+          "user_id": 3
+    }
+  ]

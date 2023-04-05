@@ -1,0 +1,9 @@
+<div>
+     <a href="/create-new-post">Create New Post</a>
+    <br/>
+    
+        {{#each post as |blog| }}
+ <button type="button"><a href="/edit-post/{{blog.id}}">{{blog.title}}</a></button>
+ <br/>
+  {{/each}}
+</div>

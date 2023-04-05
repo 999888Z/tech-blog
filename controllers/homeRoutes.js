@@ -3,17 +3,22 @@ const { Post, User } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
-  const blogPost = await Post.findAll({
-    include: [
-      {
-        model: User,
-        attributes: ["name"],
-      },
-    ],
-  });
-  const renderBlog = blogPost.map((one) => one.get({ plain: true }));
-
-  res.render("homepage", { renderBlog, logged_in: req.session.logged_in });
+  try {
+    const blogPost = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
+    const renderBlog = blogPost.map((one) => one.get({ plain: true }));
+  
+    res.render("homepage", { renderBlog, logged_in: req.session.logged_in });
+  } catch (error) {
+    console.log(error)
+  }
+  
 });
 
 router.get("/login", async (req, res) => {
@@ -87,23 +92,26 @@ router.get("/edit-post/:id", async (req, res) => {
 
 router.get("/comments/:id", async (req, res) => {
   try {
+    
     const comment = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
           attributes: ["name"],
         },
-        {
-          model: Comment,
-          include: [{ model: User, attributes: ["name"] }],
-        },
+        // {
+        //   model: Comment,
+        //   include: [{ model: User, attributes: ["name"] }],
+        //   attributes: ["comment"]
+        // },
       ],
     });
+    const newComment = comment.get({ plain: true });
     res.render("comments", {
-      comment,
+      newComment,
     });
   } catch (error) {
-    res.status(500).json("comment error");
+    res.status(500).json(error);
   }
 });
 

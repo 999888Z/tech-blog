@@ -13,21 +13,23 @@
         <nav>
           <!-- Conditionally render login or logout links -->
           {{#if logged_in}}
-            <a href="/">Home</a>
-            
-            <a href="/dashboard">Dashboard</a>
+          <div class="spacing">
+            <a class='btn-chg' href="/">Home</a>
 
-           
-            |
-            <button class="no-button" id="logout">Logout</button>
+            <a class='btn-chg' href="/dashboard">Dashboard</a>
+
+
+
+            <button class="no-button btn-chg" id="logout">Logout</button>
+            </div>
           {{else}}
-            <a href="/login">Login</a>
+            <a class='btn-chg login' href="/login">Login</a>
           {{/if}}
         </nav>
 
         <h1>
 
-          <a href="/">The Tech Blog</a>
+          <a class="center tech" href="/">The Tech Blog</a>
         </h1>
 
       </header>

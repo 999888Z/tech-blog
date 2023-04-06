@@ -1,9 +1,10 @@
-<div>
-     <a href="/create-new-post">Create New Post</a>
+<div class="dash">
+
     <br/>
-    
+
         {{#each post as |blog| }}
- <button type="button"><a href="/edit-post/{{blog.id}}">{{blog.title}}</a></button>
+ <button class="dash-btn" type="button"><a class="dash-a" href="/edit-post/{{blog.id}}">{{blog.title}}</a></button>
  <br/>
   {{/each}}
+  <a class="center create" href="/create-new-post">Create New Post</a>
 </div>

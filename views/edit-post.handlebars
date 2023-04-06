@@ -1,24 +1,25 @@
-{{!-- {{ post as |blog| }} --}}
-<p>{{post.title}}</p>
-<p>{{post.body}}</p>
+<div>
+    <div class="post">
+  <a class="title" href = "/comments/{{post.id}}"> {{post.title}} <span class="end"> Blogged on {{format_time post.createdAt}} </span> </a>
+  <p>{{post.body}}</p>
+  </div>
 
-<form>
+<form class="new-post">
     <div>
         <label>Update Title</label>
-        <input type= "text" id= "update-title"></input>
+        <input type= "text" class="input-lg" id= "update-title"></input>
     </div>
 
     <div>
         <label>Update Body</label>
-        <textarea type= "text" id= "update-body"></textarea>
+        <textarea type= "text" class="input-lg" id= "update-body"></textarea>
     </div>
 
-    <button id="update-btn">Update Post</button>
-    <button id= "delete-btn">Delete</button>
+    <button class="btn-chg" id="update-btn">Update Post</button>
+    <button class="btn-chg" id= "delete-btn">Delete</button>
 </form>
 
 
 <script src="/js/updatePost.js"></script>
 
 <script src="/js/deletePost.js"></script>
-

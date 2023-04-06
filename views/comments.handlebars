@@ -1,9 +1,23 @@
-<p>{{newComment.title}}</p>
-<p>{{newComment.body}}</p>
-<form>
-  <label>Add comment to this post.</label>
+<div>
+    <div class="post">
+  <a class="title" href = "/comments/{{newComment.id}}"> {{newComment.title}} <span class="end"> Blogged on {{format_time newComment.createdAt}} by {{newComment.user.name}}</span> </a>
 
-  <textarea class="form-input" id="comment-text"></textarea>
-  <button type="submit" id="comment-btn">Submit Comment</button>
+  <p>{{newComment.body}}</p>
+
+  </div>
+</div>
+<p class="com">Comments</p>
+{{#each newComment.comments as |cmt| }}
+<div class="post">
+<p class="comm">{{cmt.comment}} <span class="end">Comment made by {{cmt.user.name}} on {{format_time cmt.createdAt}}</span></p>
+</div>
+{{/each}}
+<form>
+  <div class="dash">
+  <p>Add comment to this post.</p>
+
+  <textarea class="form-input input-lg wid" id="comment-text"></textarea>
+  <button type="submit" class="btn-chg" id="comment-btn">Submit Comment</button>
+  </div>
 </form>
 <script src="/js/comment.js"></script>

@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Post, User } = require("../models");
+const { Post, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
@@ -76,10 +76,7 @@ router.get("/edit-post/:id", async (req, res) => {
           model: User,
           attributes: ["name"],
         },
-        // {
-        //   model: Comment,
-        //     include: [{model: User, attributes: ['name']}]
-        // },
+        
       ],
     });
     const post = editPost.get({ plain: true });
@@ -99,16 +96,16 @@ router.get("/comments/:id", async (req, res) => {
           model: User,
           attributes: ["name"],
         },
-        // {
-        //   model: Comment,
-        //   include: [{ model: User, attributes: ["name"] }],
-        //   attributes: ["comment"]
-        // },
+        {
+          model: Comment,
+          include: [{ model: User, attributes: ["name"] }],
+          
+        },
       ],
     });
     const newComment = comment.get({ plain: true });
     res.render("comments", {
-      newComment, logged_in: true
+      newComment, logged_in: req.session.logged_in
     });
   } catch (error) {
     res.status(500).json(error);

@@ -1,6 +1,11 @@
 <div>
     {{#each renderBlog as |blog| }}
-  <a href = "/comments/{{blog.id}}"> {{blog.title}} </a>
+    <div >
+    <div class="post">
+  <a class="title" href = "/comments/{{blog.id}}"> {{blog.title}} <span class="end"> Blogged on {{ format_time blog.createdAt}} by {{blog.user.name}}</span> </a>
   <p>{{blog.body}}</p>
+  </div>
+  </div>
   {{/each}}
 </div>
+

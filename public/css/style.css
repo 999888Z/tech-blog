@@ -1,3 +1,101 @@
 header {
-    background: rgb(98, 201, 100);
-}
+    background: rgb(226, 216, 216);
+  }
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+  .tech {
+    text-decoration: none;
+    color: gray;
+  }
+  .btn-chg {
+    text-decoration: none;
+    border: 2px solid gray;
+    padding: 4;
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  .spacing {
+    display: flex;
+    justify-content: space-around;
+  }
+  .post {
+    border: 3px solid rgb(226, 216, 216);
+    margin-bottom: 10px;
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .title {
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(226, 216, 216);
+    padding: 0px 4px 4px 4px;
+    text-align: center;
+    font-size: 18px;
+  }
+  .end {
+    font-style: italic;
+  }
+  .dash-a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+  }
+  .dash-btn {
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8px;
+    width: 50%;
+    background-color: rgb(226, 216, 216);
+    border-radius: 5px;
+  }
+  .dash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .create {
+    font-size: 20px;
+  }
+  .new-post {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .input-lg {
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  .login {
+    display: flex;
+    justify-content: center;
+    width: 3%;
+    margin-top: 10px;
+  }
+  .com {
+    text-align: center;
+    font-size: 25px;
+  }
+  .comm {
+    display: flex;
+    justify-content: space-between;
+  
+    padding: 0px 4px 4px 4px;
+    text-align: center;
+    font-size: 18px;
+  }
+  .wid {
+    max-width: 60%;
+  }

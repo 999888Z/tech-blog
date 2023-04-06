@@ -5,24 +5,24 @@ const updatePost = async () => {
     const title = document.getElementById('update-title').value.trim();
 
     if(body && title){
-      
-    var response = await fetch(`/api/blog-data/update-post/${id}`, {
+     //Updating body and title into the database 
+    const response = await fetch(`/api/blog-data/update-post/${id}`, {
     
       method: 'PUT',
       body: JSON.stringify({title, body}),
       headers: { 'Content-Type': 'application/json' },
     });
-    console.log("also here")
+   
     }
     else if (body && !title){
-        var response = await fetch(`/api/blog-data/update-post/${id}`, {
+        const response = await fetch(`/api/blog-data/update-post/${id}`, {
             method: 'PUT',
             body: JSON.stringify({body}),
             headers: { 'Content-Type': 'application/json' },
           });
     }
     else if(title && !body){
-        var response = await fetch(`/api/blog-data/update-post/${id}`, {
+        const response = await fetch(`/api/blog-data/update-post/${id}`, {
             method: 'PUT',
             body: JSON.stringify({title}),
             headers: { 'Content-Type': 'application/json' },

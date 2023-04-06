@@ -2,6 +2,8 @@ const router = require("express").Router();
 const { Post, Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
 
+
+//This route creates new posts
 router.post("/create-new-post", async (req, res) => {
   try {
     const newPostData = await Post.create({
@@ -16,9 +18,9 @@ router.post("/create-new-post", async (req, res) => {
   }
 });
 
+//This updates a particular post
 router.put("/update-post/:id", async (req, res) => {
-  // console.log(req.body.title, req.body.body)
-  console.log("hello there");
+  
   try {
     const updatePost = await Post.update(
       {
@@ -37,6 +39,7 @@ router.put("/update-post/:id", async (req, res) => {
   }
 });
 
+//This deletes a particular post
 router.delete("/delete/:id", async (req, res) => {
   Post.destroy({
     where: {
@@ -46,6 +49,7 @@ router.delete("/delete/:id", async (req, res) => {
   res.json("deleted");
 });
 
+//This adds a comment to a particular post
 router.post("/add-comment", async (req, res) => {
   
   try {

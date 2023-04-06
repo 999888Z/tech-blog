@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { Post, User, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
+//Render homepage 
 router.get("/", async (req, res) => {
   try {
     const blogPost = await Post.findAll({
@@ -21,37 +22,23 @@ router.get("/", async (req, res) => {
   
 });
 
+//Render login page
 router.get("/login", async (req, res) => {
   res.render("login");
 });
 
+//Render signup page
 router.get("/signup", async (req, res) => {
   res.render("signup");
 });
 
+//Render dashboard page
 router.get("/dashboard", (req, res) => {
   Post.findAll({
     where: {
       user_id: req.session.user_id,
     },
-    // attributes: ["id", "title", "body", "created_at"],
-    // include: [
-    // {
-    // model: Comment,
-    // attributes: [
-    //   "id",
-    //   "comment_text",
-    //   "review_id",
-    //   "user_id",
-    //   "created_at",
-    // ],
-    //     include: {
-    //       model: User,
-    //       attributes: ["name"],
-    //     },
-    //   },
-
-    // ],
+ 
   })
     .then((postData) => {
       const post = postData.map((post) => post.get({ plain: true }));
@@ -64,10 +51,12 @@ router.get("/dashboard", (req, res) => {
     });
 });
 
+//Render a newly created post page
 router.get("/create-new-post", async (req, res) => {
   res.render("create-new-post", { logged_in: req.session.logged_in });
 });
 
+//Render the edit post page
 router.get("/edit-post/:id", async (req, res) => {
   try {
     const editPost = await Post.findByPk(req.params.id, {
@@ -87,6 +76,7 @@ router.get("/edit-post/:id", async (req, res) => {
   }
 });
 
+//Render the comments page
 router.get("/comments/:id", async (req, res) => {
   try {
     

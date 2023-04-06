@@ -4,7 +4,7 @@ const signupFormHandler = async (event) => {
     const name = document.querySelector('#name-signup').value.trim();
    
     const password = document.querySelector('#password-signup').value.trim();
-  
+  //Posts user name and password data to the database
     if (name && password) {
       const response = await fetch('/api/users/signup', {
         method: 'POST',
@@ -15,7 +15,7 @@ const signupFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/');
       } else {
-        alert(response.statusText);
+        alert("Please enter valid value.");
       }
     }
   };

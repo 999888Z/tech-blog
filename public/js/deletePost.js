@@ -1,3 +1,4 @@
+//Sends request to delete post from database
 const deletePost = async () => {
   const id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1

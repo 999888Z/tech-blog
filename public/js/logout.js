@@ -1,4 +1,4 @@
-//build a post route which is in the mini project
+//This is the post request to logout and end a session
 
 const logout = async () => {
     const response = await fetch('/api/users/logout', {

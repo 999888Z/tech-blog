@@ -6,7 +6,7 @@ const newPostFormHandler = async (event) => {
     const body = document.querySelector('#post-content').value.trim();
 
     if (title && body) {
-        // Send a POST request to the API endpoint
+        // Send a POST request to the API endpoint to create new post in database
         const response = await fetch('/api/blog-data/create-new-post', {
             method: 'POST',
             body: JSON.stringify({ title, body }),

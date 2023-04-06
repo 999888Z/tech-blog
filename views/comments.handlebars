@@ -7,6 +7,7 @@
   </div>
 </div>
 <p class="com">Comments</p>
+{{!-- This iterates through the comments and renders each one associated with that post. --}}
 {{#each newComment.comments as |cmt| }}
 <div class="post">
 <p class="comm">{{cmt.comment}} <span class="end">Comment made by {{cmt.user.name}} on {{format_time cmt.createdAt}}</span></p>

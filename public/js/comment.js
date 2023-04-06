@@ -12,7 +12,7 @@ const comment = async () => {
   });
   console.log(addComment)
   if (response.ok) {
-    document.location.reload();
+    document.location.replace(`/comment/${id}`)
   }
    
   

@@ -46,7 +46,7 @@ router.delete("/delete/:id", async (req, res) => {
   res.json("deleted");
 });
 
-router.post("/add-comment", withAuth, async (req, res) => {
+router.post("/add-comment", async (req, res) => {
   
   try {
     const newCommentData = await Comment.create({

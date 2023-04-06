@@ -12,6 +12,7 @@
 <p class="comm">{{cmt.comment}} <span class="end">Comment made by {{cmt.user.name}} on {{format_time cmt.createdAt}}</span></p>
 </div>
 {{/each}}
+{{#if logged_in}}
 <form>
   <div class="dash">
   <p>Add comment to this post.</p>
@@ -20,4 +21,7 @@
   <button type="submit" class="btn-chg" id="comment-btn">Submit Comment</button>
   </div>
 </form>
+{{else}}
+<p class="com">You must be logged in to add a comment.</p>
+{{/if}}
 <script src="/js/comment.js"></script>

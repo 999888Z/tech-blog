@@ -11,11 +11,9 @@ const comment = async () => {
 
   });
   console.log(addComment)
-  if (addComment.redirected === true) {
-    document.location.replace("/login");
-  } else {
+  
     document.location.reload();
-  }
+  
 };
 
 document.getElementById("comment-btn").addEventListener("click", comment);
